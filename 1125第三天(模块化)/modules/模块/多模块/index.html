@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--下面的这种方式有一个问题：
+1、一个页面需要引入多个js文件
+2、问题：
+    1】请求过多 =>【进行请求的亚索合并】
+    2】依赖模糊 =>【难以弄清楚多个js文件之间的依赖关系】
+    3】难以维护 =>代码冗余，难以维护。
+这些问题可以通过现代模块化编程和项目构建的方式。-->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="module1.js"></script>
+<script src="module2.js"></script>
+<script src="module3.js"></script>
+<script src="module4.js"></script>
+<script>
+/*以上的文件都是虚拟的文件内容。*/
+    myModule.foo();
+</script>
+</body>
+</html>

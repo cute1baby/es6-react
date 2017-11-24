@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//Set和Map本身都是对象
+	let set = new Set();
+	//可以进行数组去重
+	set = new Set([2,4,6,8,5,4]);	//得到的值会自动去重复
+
+	//往数组里面添加一个元素
+	set.add('abcd');	
+	console.log(set,set.size);  //长度
+	//删除某一个值
+	set.delete('abcd');
+	console.log(set,set.has(2),);
+set.clear();   //清楚里面的元素
+
+
+let map = new Map();  //成对的元素,放的是键值对
+//后面的值会覆盖前面的值,达到去重的效果
+map = new Map([['name','jack'],['age',39],['age',30]]); 
+console.log(map,map.size);
+
+map.set('name','lizhong');
+console.log(map);
+console.log(map.get('name'));
+map.delete('name');
+console.log(map,map.has('age'));
+map.clear();
+
+</script>
+</body>
+</html>

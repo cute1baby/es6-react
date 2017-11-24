@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/***引入类的概念：
+    1、通过class定义类。
+    2、在类中通过constructor定义构造方法[目的是创建类的实例对象]
+    3、通过new来创建类的实例
+    4、通过extends来实现类的继承
+    5、通过super调用父类的构造方法
+    6、重写从父类中继承的一般方法
+ ***/
+
+//定义一个人的类
+class Person{
+    //构造方法(与构造函数相对应)
+        constructor(name,age){
+            this.name =name;
+            this.age = age;
+        }
+        //一般方法
+        showInfo(){
+           console.log(this.name,this.age);
+        }
+    }
+    console.log(typeof Person);  //function
+    let p =new Person('Tom',13); //内部调用的是constructor
+    p.showInfo();
+
+    //定义一个person的子类
+class Student extends Person{
+    constructor(name,age,price){
+        super(name,age); //调用父类型的构造方法
+        this.price =price;
+    }
+    //方法重写：从父类的方法不能满足需求的时候需要重新实现
+    showInfo(){
+        console.log(this.name,this.age,this.price);
+    }
+
+}
+//创建子类的对象
+    const s = new Student('jack',24,4000);
+    s.showInfo();
+</script>
+</body>
+</html>

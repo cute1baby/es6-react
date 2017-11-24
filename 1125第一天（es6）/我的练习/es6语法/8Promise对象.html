@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    //需要注意他们的执行顺序。
+function showMgr(time){
+    console.log('开始调用showMgr函数');  //[2]
+    const promise = new Promise((resolve,reject)=>{
+        console.log('开始实例化Promise对象');  //[3]
+        setTimeout(()=>{
+            console.log('开始执行计时器');  //[5]
+            resolve();
+        },time)
+    })
+    return promise;
+}
+console.log('then之前');   //[1]
+showMgr(1000)
+    .then(()=>{
+    console.log('到点了,计时器执行结束!');  //[6]
+})
+console.log('then之后');  //[4]
+</script>
+</body>
+</html>

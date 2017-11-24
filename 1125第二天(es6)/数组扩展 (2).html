@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<script>
+let btns = document.getElementsByTagName('button');
+var arr1 = Array.prototype.slice.call(btns);
+let arr2 = Array.from(btns);
+console.log(btns instanceof Array,arr1 instanceof Array,arr2 instanceof Array);  //判断是否为真数组
+
+const arr3 = Array.of(1,'abc',true); //将一系列值转化为数组
+console.log(arr3);
+var arr = [5,6,3,10];
+//找出数组中小于5的元素的下标(第一个)
+let arr4 = arr.find(function(value,index,arr){
+	return value<5;
+})
+console.log(arr4);
+//找出数组中小于5的元素的下标(最后一个)
+let arr5 = arr.findIndex(function(value,index,arr){
+	return value<5;
+})
+console.log(arr5);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="module.js"></script>
+<script>
+    ///好处：此时只是暴露方法bar,foo.数据是被保护起来的.
+    //并且此时可以依赖jquery做一些事情。
+    myModule.foo();
+    myModule.data='123456';
+    myModule.bar();  //数据丝毫不发生改变
+</script>
+</body>
+</html>

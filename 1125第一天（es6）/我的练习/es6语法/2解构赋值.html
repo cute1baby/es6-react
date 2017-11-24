@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /**
+     *1、理解：从对象或者数组中提取数据,并且赋值给变量(多个)
+     * 2、对象的解构赋值【变量名和属性名一致】
+     * let {n,a} = {n:'ley',a:'atigom'}
+     * 3、数组的解构赋值
+     * let [a,b] = [1,'atmiy']
+     * 4、作用是给多个形参赋值
+     **/
+    {
+        let obj = {name: 'lizhong', age: 20};
+        var {name, age} = obj;
+        console.log(name, age);  //单独拿出来的时候作用全局变量来用
+
+        let [a, b, c] = ['23', 44, '我们在一起'];
+        console.log(a, b, c);
+
+        //给多个形参赋值
+        function show(person){
+            console.log(person.n,person.age); //必须通过对象获取属性的方式才能拿到
+        }
+        show({n:'defr',age:66});
+
+        function show1({n,age}){
+            console.log(n,age); //对象的属性被自动解构了,直接能拿到属性值。
+        }
+        let person1 = {n:'www',age:22};
+        show(person1);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/**
+ *  1、模板字符串:简化字符串的拼接：
+    模板字符串必须用` `包裹
+    变化的部分用$(xxx)来表示
+ */
+
+//老的方式
+const person = {name:'tom',age:12};
+let msg ='我叫做'+person.name+',十年之后'+(person.age+10)+'岁';
+let msg1 = `我叫做${person.name},十年之后${person.age+10}岁`
+console.log(msg);
+console.log(msg1);
+</script>
+</body>
+</html>

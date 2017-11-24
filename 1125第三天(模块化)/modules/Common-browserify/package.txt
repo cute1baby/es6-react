@@ -1,0 +1,21 @@
+{
+  "name": "Commonjs",  //标识当前应用包
+  "version": "1.0.0",
+  "scripts": {  //写成命令，方便编译运行打包工作
+    "bundle":"browserify js/src/app.js -o js/dist/bundle.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {  //用于运行的包依赖
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {   //用于编译打包的安装依赖(构建依赖)
+    "browserify": "^14.5.0"
+  }
+}
+
+关于"uniq": "^1.0.1"版本的解读：
+"^1.0.1"和"~1.0.1"的区别
+"^1.0.1"：表示可以兼容下载前面两位更高的版本
+"~1.0.1"：表示可以兼容下载第三位更高的版本
+
+

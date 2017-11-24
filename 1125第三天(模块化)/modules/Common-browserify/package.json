@@ -1,0 +1,14 @@
+{
+  "name": "Commonjs",
+  "version": "1.0.0",
+  "scripts": {
+    "bundle":"browserify js/src/app.js -o js/dist/bundle.js",
+    "dev": "node app.js"
+  },
+  "dependencies": {
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.5.0"
+  }
+}

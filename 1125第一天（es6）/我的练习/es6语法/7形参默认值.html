@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Point(x=1,y=1){
+    this.x = x;
+    this.y = y;
+}
+var point = new Point(); //不传入参数时写伪默认值
+var point1 = new Point(4,8);  //传入参数时进行覆盖
+console.log(point.x,point.y);
+console.log(point1.x,point1.y);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /**
+     *简化对象的写法: *
+     * 省略同名的属性值
+     * 省略方法的function*/
+    let x =10;
+    let y =3;
+    //es5的写法
+    let obj = {
+        x:x,
+        y:y,
+        set:function (bt) {
+            this.x = bt
+        }
+    }
+    //es6写法
+    let obj1 = {
+        x,
+        y,
+        set (bt) {
+            this.x = bt
+        }
+    }
+    console.log(obj1);
+</script>
+</body>
+</html>

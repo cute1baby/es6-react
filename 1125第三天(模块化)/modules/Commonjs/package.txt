@@ -1,0 +1,23 @@
+{
+  "name": "Commonjs",
+  "version": "0.0.1",
+    "scripts":{ //进行配置npm命令
+    //好处就是将命令配置放在package.json里面，很规范，也方便查找
+    "***":"node app.js"
+    (使用方法是npm run +***);
+  },
+}
+name,version这两个是非常必要的，因为通过name可以找到对应的文件，version能指向特定的
+对象的版本。于是乎该包是什么文件，什么版本就生成了。
+
+
+#一个完整的commonjs的项目应该是：
+
+-modules(向外面暴露接口)
+    -module1.js
+    -module2.js
+-node-modules
+    -这种包和文件
+-app.js(用来接收函数和使用函数)
+-package.json(管理这些包文件)
+

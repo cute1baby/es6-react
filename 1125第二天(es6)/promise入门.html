@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+function fn(){
+	console.log(2);
+	var promise = new Promise((resolve,reject)=>{ //先需要实例化该对象
+		console.log(3);
+		setTimeout(()=>{
+			console.log(5);
+			resolve();
+			console.log('成功执行函数');
+		},1000)
+	})
+	return promise;
+}
+console.log(1);
+fn()
+	.then(()=>{
+		console.log(6);
+		console.log('找我吗?我来了');
+	})
+	console.log(4);
+</script>
+</body>
+</html>

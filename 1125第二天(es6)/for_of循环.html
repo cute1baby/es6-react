@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<script>
+/**
+可以遍历的有：数组,Set,Map,字符串,伪数组
+**/	
+const arr = ['er',3,7,0,4,68];
+for(item of arr){
+	console.log(item);  //每一项的值
+}  
+console.log('----------------------')
+const set = new Set(['er',3,7,0,4,68]);
+for(item of set){
+	console.log(item);  //每一项的值
+}
+console.log('----------------------')
+
+const map = new Map();
+map.set('name','lizhong');
+map.set(10,true);
+for([key,value] of map){
+	console.log(key,value);  //每一项的值
+}
+console.log('----------------------')
+let str = 'werhjgf';
+for(item of str){
+	console.log(item);  //每一项的值
+}
+console.log('----------伪数组------------')
+
+let btns = document.getElementsByTagName('button');
+for(item of btns){
+	console.log(item.innerText);  //每一项的值
+}
+</script>
+</body>
+</html>

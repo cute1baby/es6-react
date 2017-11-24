@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//Object.create()方法
+/*var object= {a:1};
+var obj2 = Object.create(object);
+console.log(obj2.a);  *///直接继承object属性，通过隐式原型链
+
+
+
+//Object.defineProperties();
+var obj11 = {
+	firstName:'li',
+	lastName:'zhong'
+}
+Object.defineProperties(obj11,{
+	'fullName':{
+		get:function(){
+			return this.firstName+'-'+this.lastName;
+			//读取当前属性时调用,返回当前值
+		},
+		set:function(val){
+			var name1 = val.split('-');
+			this.firstName = name1[0];
+			this.lastName = name1[1];
+			//修改当前属性值，监视当前值的变化，作用于其他元素
+		}
+	}
+})
+
+/*var obj = {};
+Object.defineProperties(obj, {
+  'property1': {
+    value: true,
+    writable: true
+  },
+  'property2': {
+    value: 'Hello',
+    writable: false
+  }
+  // etc. etc.
+});*/
+
+console.log(obj11.fullName);   //此时读取当前属性值，调用get方法
+obj11.fullName = 'wang-sicong';    //设置当前值，此时调用set方法,修改其他属性值
+console.log(obj11.firstName,obj11.lastName);
+</script>
+</body>
+</html>

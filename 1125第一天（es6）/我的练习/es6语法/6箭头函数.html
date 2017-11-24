@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="btn1">按钮1</button>
+<button id="btn2">按钮2</button>
+<script>
+ /***
+    作用是定义匿名函数:*
+    基本语法：
+        没有参数：()=>console.log('xxx');
+        一个参数：i => i+5;
+        大于一个参数：(i,j) => i+j
+        函数体不用大括号:默认返回结果
+        函数体如果有多个语句,需要使用{}包裹
+    *
+    使用场景:多用来定义回调函数。
+  特点：
+    书写简洁
+    {{没有自己的this}}
+    **/
+
+function abc(a){
+    return a+10;
+}
+let abc2 = a=>a+10;
+console.log(abc(3),abc2(5));
+
+//函数体里面存在多条语句需要加上{}.
+
+document.getElementById('btn1').onclick = ()=> console.log(this);
+//this指向window（原因是箭头函数中不存在this,当前的作用域中找不到,那么他就会去上级作用域中找）
+document.getElementById('btn2').onclick = function(){
+    console.log(this);  //this指向btn2
+};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="module1.js"></script>
+<script src="module2.js"></script>
+<script>
+    //此时向外面就直接暴露了foo，bar和data
+    foo();  //直接调用全局方法[此时module2的foo方法覆盖了module1的方法，这样模块1某些方法就废了]
+    bar();
+    data ='i love you';
+    console.log(data);
+</script>
+</body>
+</html>

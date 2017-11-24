@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /**
+     * 1、rest(可变)函数[个人的理解就是在参数的个数不确定的情况下需要用到...运算符]
+     * function(...values){
+     *    let sum = 0;
+     *    for(value of values){
+     *          sum +=value;
+     *    }
+     *    return sum;
+     * }
+     *
+     *2、扩展运算符：
+     * let arr1 = [1,3,5];
+     * let arr2 = [2,...arr1,7];
+     * arr2.push(...arr1);*
+     */
+
+
+
+
+ //定义一个函数得到n个数的和
+
+/*【1】rest可变参数：收集多个数据存到数组中*/
+
+ //这种情况不清楚参数的个数是多少,因此需要使用到...运算符
+ //arguments是伪数组,values是真数组。
+function sum(...values){  //代替arguments
+    console.log(values instanceof Array,arguments instanceof Array);
+    let result =0;
+    values.forEach(values=>result +=values);
+    return result
+}
+console.log(sum(2,5,8));
+ console.log(sum(2,5,8,5));
+
+/* 【2】扩展运算符：取出数组中所有的数据*/
+let arr2= [2,4,6];
+let arr3 =[6,...arr2,19];  //相当于解构的效果
+console.log(arr3);
+
+    let arrt1 = [1,3,5];
+    let arrt2 = [2,...arrt1,7];
+    arrt2.push(...arrt1);
+    console.log(arrt2);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+//都是数组的原型方法
+//Array.prototype.map()
+//Array.prototype.filter()
+var arr = [4,6,10,7,5];
+var arr1 = arr.filter(function(item,index){
+	return item>=6;  //返回的为true的值加入到新的数组里面
+})
+var arr2 = arr.map(function(item,index){
+	return item+10;
+})
+console.log(arr1);
+console.log(arr2);	
+
+/***
+ *
+ 声明式编程:做什么?
+ 命令式编程:流程+做什么?
+
+ 最简单的理解：我们来区别声明式编程和命令式编程这两种的不同。举个比较简单易懂的例子：
+ 声明式编程就像我们这里的map方法，直接在回调函数里面写上return item+10就能达到每个项都加10的效果。
+ 命令式编程就像我们把整个逻辑拆分开：对于同样map需要达到的效果，使用命令式编程的思想是
+先新建一个空数组,然后在遍历原来的数组，对于每一项再用一个变量保存，同时每项+10,最后push到那个新数组
+ 中，达到最后的结果。
+*/
+
+
+</script>
+</body>
+</html>

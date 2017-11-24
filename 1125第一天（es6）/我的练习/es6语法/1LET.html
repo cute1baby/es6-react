@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button>button1</button>
+<button>button2</button>
+<button>button3</button>
+<script>
+    /**
+     *let变量：
+     * （1）没有预处理，即没有变量提升机制*
+     * （2）不能重复声明
+     * （3）只有在块作用域中有效
+     **/
+let btns =document.getElementsByTagName('button');
+for(let i=0,length=btns.length;i<length;i++){
+    var btn = btns[i];
+    alert(i);  //这里相对于点击事件的作用域来说是外部作用域
+    btn.onclick=function(){
+        alert(i);
+    }
+}
+</script>
+</body>
+</html>
