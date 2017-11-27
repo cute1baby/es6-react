@@ -48,7 +48,7 @@
  <script type="text/javascript" src="js/lib/require.js" data-main="js/main.js"></script>
  ```
   
-> * CMD_require  
+> * CMD_sea
 ```
 ·
     |-js
@@ -71,7 +71,7 @@ index.html如何进行使用？
 </script>
 ``` 
 
-> * es6_require
+> * es6
 ```
 ·
     |-js
