@@ -2,27 +2,22 @@
 这是近期时间学习的结果
 #对几种模块化框架文件结构：
 > * Commonjs
-  |-modules 
-  
+  |-modules
     |-module1.js
-    
     |-module2.js
-    
   |-node-modules
-  
   |-app.js
   |-package.json
-  
-  
+
 > * Commonjs_browerify
   |-js
     |-dist
       |-bundle.js
     |-src
-        |-module1.js
-        |-module2.js
-        |-module3.js
-        |-app.js
+      |-module1.js
+      |-module2.js
+      |-module3.js
+      |-app.js
   |-node_modules
   |-index.html
   |-package.json
