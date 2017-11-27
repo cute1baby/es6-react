@@ -1,13 +1,13 @@
 # es6-react
 这是近期时间学习的结果
 #对几种模块化框架文件结构：
-> * Commonjs
-  |-modules
-    |-module1.js
-    |-module2.js
-  |-node-modules
-  |-app.js
-  |-package.json
+> * Commonjs    
+  | - modules
+    | - module1.js
+    | - module2.js
+  | - node-modules
+  | - app.js
+  | - package.json
 
 > * Commonjs_browerify
   |-js
