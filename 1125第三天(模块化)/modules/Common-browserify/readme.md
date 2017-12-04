@@ -5,7 +5,7 @@
 
 
 #目录结构
-
+```
 |-js
     |-dist
     |-src
@@ -16,9 +16,10 @@
 |-node_modules
 |-index.html
 |-package.json
+```
 
 #如何使用
-
+```
 1、搭建上面的框架
 2、下载browserify(作用是:帮助编译打包)
     全局：（步骤1）npm install browserify -g
@@ -33,5 +34,5 @@
 o指的是output(输出)
 
 *****注意：最后代码运行的时候其实不会去读取js/src/module1.js,module2.js.因为所有的js文件都在bundle.js中********
-
+```
 
