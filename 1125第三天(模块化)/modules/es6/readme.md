@@ -1,5 +1,6 @@
 #es6的资料：
-    （1）说明：
+```
+ （1）说明：
     http://es6.ruanyifeng.com/#docs/module
     依赖模块需要编译打包处理
     （2）语法：
@@ -8,3 +9,4 @@
     （3）实现方式(浏览器端)：
     使用Babel将es6编译成es5代码(包含Commonjs模块化代码)
     使用Browerify编译打包js
+```
