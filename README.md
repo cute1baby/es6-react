@@ -1,5 +1,19 @@
 # es6-react
-这是近期时间学习的结果
+这是近期时间学习的结果:
+
+> * vue2.0的mainjs页面格式：
+```
+import App from './App'
+import router from './router'
+
+new Vue({
+  el: '#app',  
+  router,
+  template: '<App/>',
+  components: { App }
+})
+```
+
 #对几种模块化框架文件结构：
 > * Commonjs    
 ```
