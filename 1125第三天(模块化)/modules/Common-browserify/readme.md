@@ -1,7 +1,8 @@
 #中心思想
 
-    在commonjs的基础上将app.js+mudules下面的各个js+uniq模块打包
-    到一个bundle.js文件中,让所有的js只有一个文件（这就是打包合并）
+> * 在commonjs的基础上将app.js+mudules下面的各个js+uniq模块打包
+    到一个bundle.js文件中,让所有的js只有一个文件（这就是打包合并）。
+> * 说白了就是在commonjs基础上加上编译打包。
 
 
 #目录结构
