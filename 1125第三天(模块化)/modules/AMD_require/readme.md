@@ -4,6 +4,7 @@
     })
 
 #基本语法：
+```
     *定义暴露模块：定义有依赖的模块=>
         define(['module1'，'module2'],function(n1,n2){
             return 模块
@@ -12,5 +13,5 @@
         require(['module1'，'module2'],function(n1,n2){
             使用 n1/n2
         })
-
+```
 #实现(浏览器端)：require.js
