@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+class App extends React.Component {
+	constructor(props){
+		super(props)
+		//初始化数据
+		this.state={
+			todos:['lizhong','Mary','John']
+		}
+		this.add = this.add.bind(this)
+	}
+	add(todo){
+		const todos= this.state.todos
+		todos.unshift(todo);
+		//更新state里面的数据
+		this.setState({todos});
+	}
+	render(){
+		const todos = this.state.todos;
+		return (
+			<div>
+				<h2>simple todolist</h2>
+				<TodoAdd add={this.add} length={todos.length}/>
+				<TodoList todos={todos}/>
+			</div>
+		)
+	}
+}
+class TodoAdd extends React.Component {
+	addList(){
+		const inputTodo = this.refs.inputTodo.value.trim();
+		if(!inputTodo){
+			alert('添加的数据不能是空');
+			return
+		}
+		//父级传给子级函数的执行
+		this.props.add(inputTodo);
+		//清楚输入框数据
+		this.refs.inputTodo.value = "";
+	}
+	render(){
+		return (
+			<div>
+				<input type="text" ref="inputTodo"/> 
+				<button onClick={this.addList.bind(this)}>添加第{this.props.length + 1}个数据</button>
+			</div>
+		)
+	}
+}
+
+function TodoList(props){
+	return (
+		<div>
+			<ul>
+				{
+					props.todos.map((todo,index)=><li>{todo}</li>)
+				}
+			</ul>	
+		</div>
+	)
+}
+ReactDOM.render(<App/>,document.getElementById('root'));
+</script>
+</body>
+</html>

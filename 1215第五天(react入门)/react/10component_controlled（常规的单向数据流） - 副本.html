@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>（受控组件）</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+/**
+*React是一个单项数据流组件
+*但是可以自定义双向数据流组件(受控组件)
+**/	
+class TwoWay extends React.Component {
+	constructor(props){
+		super(props)
+		//初始化数据
+		this.state={
+			msg:'11111'
+		}
+	}
+
+	render(){
+		const msg = this.state.msg
+		return(
+			<div>
+				<input type="text" value={msg}/>
+				<p>{msg}</p>
+			</div>
+		)
+	}
+}
+ReactDOM.render(<TwoWay/>,document.getElementById('app'));
+</script>
+</body>
+</html>

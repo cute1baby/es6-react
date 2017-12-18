@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 1.react提供了一些API来创建一种'特别'的一般js对象 -->
+<div id="example1"></div>
+<div id="example2"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script>
+	var div1 = document.getElementById('example1');
+	//console.log(div1);  //这是一个比较重的对象
+
+//创建虚拟的DOM对象
+var vElement = React.createElement('h1',{id:'myId'},'createElement创建的虚拟元素');	//这是一个比较轻的对象,这也是babel转换后的代码格式
+ReactDOM.render(vElement,div1);  //将对象插入到example1中
+</script>
+
+<script type="text/babel">
+//创建虚拟的dom结构,jsx模式
+var id = 'abc';
+var title = '这是我学习的react';
+var vElement2= <h1 id={id}>{title}</h1>;
+//渲染
+ReactDOM.render(vElement2,document.getElementById('example2'));
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="root1"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+/**
+*两种方式:
+一种是通过在函数中直接通过bind当中的this，返回一个新函数让该this指向对应的实例对象。（适合使用一次的）
+第二种方式是在constructor中把this的这种关系写出来，方便该函数的重用
+另外函数的定义是这样一种方式:onXxxx={函数名}(适合使用多次的)
+另外：在return中写js代码的时候需要用{}进行包裹起来。我们可以想象他是在一个{}包裹的函数体里面。
+**/
+class Component extends React.Component{
+	constructor(props){
+		super(props)
+		this.handleNewStyle = this.handleNewStyle.bind(this);
+	}
+	handleClick(){
+		let little = this.refs.little;
+		alert(this.refs.little.value);
+	}
+	handleFocus(event){
+		alert(event.target.value);
+	}
+	handleNewStyle(){
+		alert(this.refs.name.value);
+	}
+	render (){
+		console.log(this);
+		return (
+			<div>
+				<input type="text" ref="little"/> 
+				<button onClick={this.handleClick.bind(this)}>颠簸图</button>
+				<input type="text" onBlur={this.handleFocus} placeholder="失去焦点触发函数"/>	
+				<input type="text" onBlur={this.handleNewStyle} value={this.props.name} ref="name"/>	
+			</div>
+		)
+	}
+} 
+ReactDOM.render(<Component name="flower"/>,document.getElementById("root1"));
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+class Animal extends React.Component {
+	constructor(props){
+		super(props)
+		this.state={
+			opacity:1.0
+		}
+	}
+	componentWillMount(){
+		//启动循环计时器
+		this.interVal = setInterval(()=>{
+			let {opacity} = this.state
+			opacity -= 0.05
+			if(opacity<0){
+				opacity= 1.0
+			}
+			//跟新状态
+			this.setState({opacity})
+		},100)
+	}
+	componentWillUnmount(){
+		clearInterval(this.interVal);
+	}
+	render(){
+		return (
+			<p style={{opacity:this.state.opacity}}>{this.props.msg}</p>
+		)
+	}
+}	
+ReactDOM.render(<Animal msg={'你好啊'}/>,document.getElementById('root'))
+</script>
+</body>
+</html>

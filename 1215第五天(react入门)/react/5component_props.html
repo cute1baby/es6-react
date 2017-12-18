@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app1">
+	
+</div>
+<hr>
+<div id="app2">
+	
+</div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+class Person extends React.Component{
+	render(){
+		console.log(this);
+		return (
+			<ul>
+				<li>姓名：{this.props.name}</li>
+				<li>年龄：{this.props.age}</li>
+				<li>兴趣爱好：{this.props.hobby}</li>
+			</ul>
+		)
+	}
+}
+//限制属性值得类型和必要性{name为必要填写的,无效}
+Person.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  age: React.PropTypes.number.isRequired,   
+  hobby: React.PropTypes.string.isRequired,
+}
+//定义默认属性
+Person.defaultProps  = {
+	hobby:'tenis'
+};
+let p={
+	name:'lizhong',
+	age:18,
+	hobby:'footerBall'
+}	
+//每次渲染的时候就会实例化一个Person的实例对象
+ReactDOM.render(<Person/>,document.getElementById('app1'));
+ReactDOM.render(<Person {...p}/>,document.getElementById('app2'));
+</script>
+</body>
+</html>

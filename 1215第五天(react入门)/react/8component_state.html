@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="root"></div>	
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+/***
+*特别需要注意的是:在子组件中的函数此时需要绑定this,(this是指向实例对象)。
+**/
+class Mycomponent extends React.Component{
+	constructor(props){
+		super(props)
+		this.state = {
+			likeme:true
+		}
+	}
+	handleClick(){
+		console.log(this);
+		//直接设置this.state.likeme的状态是错误的，因为在react的render里面会有一个diff的对比程序。使用this.setState({})即将老状态和新状态的值进行对比，然后渲染新节点的值。从而产生新的画面。
+		const likeme = !this.state.likeme
+		this.setState({
+			likeme
+		})
+	}
+	render(){
+		let text = this.state.likeme?'你喜欢我':'我喜欢你';
+		return <p onClick={this.handleClick.bind(this)}>{text}</p>
+	}
+}
+ReactDOM.render(<Mycomponent/>,document.getElementById('root'));
+</script>
+</body>
+</html>

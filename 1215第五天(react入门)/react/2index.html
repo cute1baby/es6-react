@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<div id="app">
+	
+</div>
+<div id="app1">
+	
+</div>
+<div id="app2">
+	
+</div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+//组件名首字母必须大写
+//类似于例子2,根标签只能有一个：就是所有的标签块都由一个div进行包裹起来的。
+//单标签必须有关标签
+
+//ReactDOM.render()渲染组件标签的基本流程
+/*(1)得到组件内部包含的虚拟DOM(调用函数直接得到/调用类使用render方法实现)
+(2)将虚拟的DOM转换成真实的DOM
+(3)插入到指定的页面元素内部*/
+
+//（1）function简单的方式
+function MyComponent1(){
+	return <h4>工厂(无状态)函数->自定义组件标题111</h4>
+}
+//.class（复杂组件）
+class MyComponent2 extends React.Component{
+	render(){
+		return (<div><h3>es6类语法->自定义组件标题222</h3>我听见你的声音</div>)
+	}
+}
+
+//方式3:es5老语法(不推荐使用)
+const MyComponent3 = React.createClass({
+	render(){
+		return <h3>老语法->自定义组件标题333</h3>
+	}
+})
+console.log( typeof(MyComponent3),typeof(MyComponent2) );
+//简化写法
+ReactDOM.render(
+	<MyComponent1/>,
+	document.getElementById('app1')
+);
+
+ReactDOM.render(
+	<MyComponent2/>,
+	document.getElementById('app')
+);
+
+ReactDOM.render(
+	<MyComponent3/>,
+	document.getElementById('app2')
+);
+</script>
+</body>
+</html>

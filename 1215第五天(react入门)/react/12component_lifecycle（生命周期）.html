@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+/**
+*constructor:实例化组件标签
+*render:渲染
+*mount:挂载
+
+*一般会再componentWill/DidMount()中开启监听,发送ajax请求(区别于在render前还是后)
+*可以在componentWillUnmount()做一些收尾工作,停止监听
+*生命周期还有一个方法(后面需要时候再讲):compoentWillReceiveProps
+**/
+class LifeStyle extends React.Component{
+	//创建对象
+	constructor(props){
+		super(props)
+		console.log('constructor')
+		this.state ={
+			age:34
+		}
+	}
+	//将要挂载
+	componentWillMount(){
+		console.log('componentWillMount()---只调用一次')
+		//启动定时器
+		setTimeout(function(){
+			this.setState({age:10})   //【更新组件,触发update方法】执行这个会再一次的触发render,同时componentWillUpdate和componentDidUpdate都会被触发
+		}.bind(this),1000)
+
+		//使用一下箭头函数来卸载组件
+		setTimeout(()=>{
+			console.log(this);
+			//移除组件[此时会触发componentWillUnmount函数]
+			ReactDOM.unmountComponentAtNode(document.getElementById('app'))
+		},2000)
+
+		this.interval = setInterval(()=>{
+			console.log('定时器在执行中');
+		},100)
+	}
+
+	//实例化LifeStyle组件,将数据挂载到App中
+	render(){
+		console.log('render');
+		return(
+			<p>看一下生命周期的打印情况，姓名是:{this.props.name},年龄是:{this.state.age}</p>
+		)
+	}
+
+		//已经挂载
+	componentDidMount(){
+		console.log('componentDidMount()---只调用一次')
+	}
+
+/*-------------第一阶段完成-------------------*/
+
+	componentWillUpdate(){
+		console.log('componentWillUpdate()')
+	}
+
+	componentDidUpdate(){
+		console.log('componentDidUpdate()')
+	}
+/*-------------第二阶段完成-------------------*/
+	componentWillUnmount(){
+		console.log('componentWillUnmount()')
+		clearInterval(this.interval);   //在组件将要卸载之前将计时器给清除掉
+		//这里有一个比较好的地方是:将变量interval挂在实例对象上,用了一次就不再使用了。
+	}
+}
+ReactDOM.render(<LifeStyle name='lizhong'/>,document.getElementById('app'))
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="example">
+	<p>下面介绍一下我的朋友：</p>
+	<hr>
+</div>
+<div id="example2"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+/**
+	*需要注意的是:这里的div里面写表达式的时候需要使用一个{}包裹表达式。
+	*这里的组件关系是:将数组传入到父组件App中,然后通过App再传入到Welcome组件中。
+**/
+class Person extends React.Component{
+    render() {
+		console.log(this);
+      return (
+      	<div>	
+      		{
+		        this.props.names.map((item,index)=>{
+		        	return <Welcome key={index} name={item}/>
+		        })
+	    	}
+        </div>
+      );
+    }
+}
+var p = ['John','Mary','Bob','Liuqian'];
+function Welcome(props){
+	return <p>这是我的新朋友:{props.name}</p>
+}
+ReactDOM.render(<Person names={p}/>,document.getElementById('example2'));
+</script>
+</body>
+</html>

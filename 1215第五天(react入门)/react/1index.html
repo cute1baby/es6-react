@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="app">
+	
+</div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+var nn = '你的我的小鸡';
+var theId = 'dsf4';
+//创建一个虚拟的DOM对象
+const vdom =<h1 id={theId}>{nn}</h1>
+//渲染(将虚拟的dom转化为真实的DOM插到容器里面)
+ReactDOM.render(vdom,document.getElementById('app'));
+</script>
+</body>
+</html>
