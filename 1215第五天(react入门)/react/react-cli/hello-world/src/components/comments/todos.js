@@ -1,7 +1,7 @@
 /**
  * Created by lizhong on 2017/12/19.
  */
-import React,{Component,PropTypes} from 'react'
+import React,{Component} from 'react'
 import Todo from './todo'
 
 export default class Todos extends Component {
@@ -11,11 +11,11 @@ export default class Todos extends Component {
         let display = comments.length ===0 ?'block':'none';
         return (
             <div>
-                <p style={{display:display}}>占时没有评论!</p>
+                <p style={{display:display}}>暂时没有用户评论!</p>
                 <ul>
                     {
                         comments.map((comment,index)=>{
-                            return <Todo key={index} comment={comment}/>
+                            return <Todo key={index} comment={comment} doleteTodo={this.props.doleteTodo}/>
                         })
                     }
                 </ul>
