@@ -1,6 +1,8 @@
 # es6-react
 这是近期时间学习的结果:
 
+> * util是一个很好的时间格式表示器。
+
 > * vue2.0的mainjs页面格式：
 ```
 import App from './App'
