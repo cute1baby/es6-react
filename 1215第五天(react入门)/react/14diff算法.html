@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="root"></div>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script type="text/babel">
+	//虚拟DOM+DOM Diff算法:最小化页面重绘
+	//呈现的是局部刷新的效果.diff的核心是通过setState前后的结果进行比较，找出这两者之间出现差异的部分，然后render的时候就去更新这一块的变量区域。
+class HelloWorld extends React.Component{
+	constructor(props){
+		super(props);
+		this.state={
+			date:new Date()
+		}
+	}
+	componentDidMount(){
+		setInterval(()=>{
+			this.setState({
+				date:new Date()
+			})
+		},1000)
+	}
+	render(){
+		return (
+			<p>
+				hello,<input type="text" placeholder="your name"/>
+				it is {this.state.date.toTimeString()}
+			</p>
+		)
+	}
+}
+ReactDOM.render(<HelloWorld/>,document.getElementById('root'));
+</script>
+</body>
+</html>

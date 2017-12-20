@@ -1,0 +1,61 @@
+*{margin:0;padding: 0;}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+  overflow: hidden;
+}
+ul,li{list-style: none;}
+.left,.right{
+  float: left;
+  width:300px;
+  border:1px solid pink;
+  margin: 10px 20px 10px 0px;
+  text-align: left;
+}
+.userContent{
+  width:200px;
+  height:100px;
+  resize: none;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.relativeP{
+  position: relative;
+  width:100%;
+  height:80px;
+  text-align:left;
+}
+.relativeP span{
+  line-height:80px;
+}
+.delateSelf{
+  position: absolute;
+  right:0px;
+  top:0px;
+  font-style: normal;
+  border:1px solid #999;
+  background:#ccc;
+  font-size:12px;
+  cursor: pointer;
+}
