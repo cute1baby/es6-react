@@ -6,9 +6,22 @@ import './App.css';
 class App extends Component {
     constructor(props){
         super(props)
+        this.doleteTodo= this.doleteTodo.bind(this)
+        this.addComments= this.addComments.bind(this)
         this.state ={
             comments:[]
         }
+    }
+    doleteTodo(index){
+        //疑问:这里的index为什么能生效
+        const comments = this.state.comments;
+        comments.splice(index,1)
+        this.setState({comments})
+    }
+    addComments(comment){
+        const comments = this.state.comments;
+        comments.push(comment)
+        this.setState({comments})
     }
     componentDidMount(){
         //模拟请求获取数据
@@ -31,10 +44,10 @@ class App extends Component {
         </header>
         <div className="App-intro">
             <div className="left">
-                <AddList />
+                <AddList addComments={this.addComments}/>
             </div>
             <div className="right">
-                <Todos comments={this.state.comments}/>
+                <Todos comments={this.state.comments} doleteTodo={this.doleteTodo}/>
             </div>
         </div>
       </div>
