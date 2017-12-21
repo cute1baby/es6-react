@@ -1,7 +1,10 @@
 /**
  * Created by lizhong on 2017/12/19.
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import React,{Component} from 'react'
 
 export default class Todo extends Component {
@@ -25,7 +28,11 @@ export default class Todo extends Component {
         return (
             <div>
                 <li>
+<<<<<<< HEAD
                     <p className="relativeP"><span>{comment.name}</span>说：<span>{comment.content}</span><em className="delateSelf" onClick={this.removeItem}>删除</em></p>
+=======
+                    <p className="relativeP"><span>{comment.name}</span>说：<span>{comment.content}</span><em className="delateSelf" onClick={this.props.doleteTodo}>删除</em></p>
+>>>>>>> origin/master
                     <hr/>
                 </li>
             </div>

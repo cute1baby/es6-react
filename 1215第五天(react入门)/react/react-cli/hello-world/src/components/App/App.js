@@ -6,12 +6,18 @@ import './App.css';
 class App extends Component {
     constructor(props){
         super(props)
+<<<<<<< HEAD
         this.remove = this.remove.bind(this)
         this.add = this.add.bind(this)
+=======
+        this.doleteTodo= this.doleteTodo.bind(this)
+        this.addComments= this.addComments.bind(this)
+>>>>>>> origin/master
         this.state ={
             comments:[]
         }
     }
+<<<<<<< HEAD
     remove(index) {
         const {comments} = this.state
         comments.splice(index, 1)
@@ -20,6 +26,17 @@ class App extends Component {
     add(item){
         const {comments} = this.state
         comments.unshift(item)
+=======
+    doleteTodo(index){
+        //疑问:这里的index为什么能生效
+        const comments = this.state.comments;
+        comments.splice(index,1)
+        this.setState({comments})
+    }
+    addComments(comment){
+        const comments = this.state.comments;
+        comments.push(comment)
+>>>>>>> origin/master
         this.setState({comments})
     }
     componentDidMount(){
@@ -43,10 +60,17 @@ class App extends Component {
         </header>
         <div className="App-intro">
             <div className="left">
+<<<<<<< HEAD
                 <AddList add={this.add}/>
             </div>
             <div className="right">
                 <Todos comments={this.state.comments} remove={this.remove}/>
+=======
+                <AddList addComments={this.addComments}/>
+            </div>
+            <div className="right">
+                <Todos comments={this.state.comments} doleteTodo={this.doleteTodo}/>
+>>>>>>> origin/master
             </div>
         </div>
       </div>

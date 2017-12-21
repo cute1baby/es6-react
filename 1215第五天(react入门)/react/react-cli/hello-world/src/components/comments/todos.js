@@ -24,9 +24,17 @@ export default class Todos extends Component {
         })
         return (
             <div>
-                <p style={{display:display}}>占时没有评论!</p>
+                <p style={{display:display}}>暂时没有用户评论!</p>
                 <ul>
+<<<<<<< HEAD
                     {items}
+=======
+                    {
+                        comments.map((comment,index)=>{
+                            return <Todo key={index} comment={comment} doleteTodo={this.props.doleteTodo}/>
+                        })
+                    }
+>>>>>>> origin/master
                 </ul>
             </div>
 
