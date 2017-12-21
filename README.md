@@ -1,3 +1,14 @@
+#重磅知识:react脚手架的安装过程:
+```
+npm install -g create-react-app
+create-react-app hello-world
+cd hello-world
+npm start（这个不需要对应的npm install下载依赖,一键就能完成）
+
+npm run build
+```
+--------
+
 # es6-react
 这是近期时间学习的结果:
 
